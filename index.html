@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Vijayawada Neighborhood Map</title>
+      <link rel="stylesheet" href="css/maps.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+      <div>
+      <div class="search" id="search">   
+         <input class="search-box" id="search-box" data-bind="textInput: searchTerm, valueUpdate: 'afterkeydown'"  placeholder="search locations here"/>
+      </div>
+      <div class="nhapp" id="nhapp">
+         <div class="menu" id="list">
+            <ul class="outputs" id="outputs" data-bind="foreach: filteredList">
+               <li class="spot" id="spot" data-bind="text: name, click: bounce"></li>
+            </ul>
+         </div>
+         <div class="find" id="map">There has been an error loading Google Maps. Please Try Again.</div>
+      </div>
+      <script src='scripts/knockout-3.4.0.js'></script>
+      <script src='scripts/jquery-1.12.0.min.js'></script>
+      <script src='scripts/map.js'></script>
+      <script src='scripts/places.js'></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?              key=AIzaSyCIfJNZNbI7biwXSTR_3O7euO0LKq2y8Wc&callback=startApp&libraries=places" onerror="errorHandling()"></script>
+   </body>
+</html>
